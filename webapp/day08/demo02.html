@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function appends(){
+		var li =document.createElement('li');
+		var ul =document.getElementById('demo');
+		ul.appendChild(li);
+		li.innerHTML='mac';
+		console.log(ul);
+		var li =document.createElement('li');
+		var tom =document.getElementsByTagName('li')[0];
+		ul.insertBefore(li, tom);
+		li.innerHTML="body";
+		console.log(ul);
+	}
+	function removeLi(){
+		var ul =$('demo');
+		var li =ul.getElementsByTagName('li')[0];
+		//删除元素
+		ul.removeChild(li);
+		var list =$('list');
+		list.appendChild(li);
+	} 
+	function $(id){
+		return document.getElementById(id);
+	}
+</script>
+</head>
+<body>
+	<h1>添加元素</h1>
+	<input type="button" value="添加" onclick="appends()"/>
+	<ul id="demo">
+		<li>Tom</li>
+		<li>Jerry</li>
+	</ul>
+	<p>删除元素列表</p>
+	<input type="button" value="删除" onclick="removeLi()"/>
+	<ul id="list">
+		
+	</ul>
+</body>
+</html>

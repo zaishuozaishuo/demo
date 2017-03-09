@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+	function cal(){
+		//获取文本框
+		var input =document.getElementById("ss");
+		//从框内取算式
+		var ss=input.value;
+		//在使用eval时建议字符串前后加括号，可以避免该字符串内存在特殊字符导致执行出问题，可以避免一些不必要的麻烦。
+		try{
+			var result=eval("("+ss+")");
+			input.value =result;
+		}catch(e){
+			input.value="Error";
+		}	
+	}
+</script>
+</head>
+<body>
+
+		<input type="text" id="ss"/>
+		<input type="button" value="="
+			onclick="cal();"/>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(){
+		//按照ID查询
+		var ul =document.getElementById("hello");
+		console.log(ul);
+		var div=ul.parentNode;
+		console.log(div)
+		var children =ul.childNodes;
+		console.log(children);
+		var elements=ul.getElementsByTagName('li');
+		console.log(elements);
+		//遍历字节点
+		for(var i =0;i<children.length;i++){
+			var node =children[i];//文本//元素
+			if(node.nodeType==1){//元素
+				console.log(node);
+			}
+		}
+	}
+	function checkout(){
+		var car = document.getElementById('car');
+		var inputs =car.getElementsByTagName('input');
+		var items = document.getElementsByName("item");
+		console.log(car);
+		console.log(inputs);
+		console.log(items);
+	}
+</script>
+</head>
+<body>
+	<h1>按层次关系查询</h1>
+	<input type="button" value="测试" onclick="test()"/>
+	<div>
+		<ul id="hello">
+			<li><a href="#hello">您好</a></li>
+			<li><a href="#hello">hello</a></li>
+			<li><a href="#hello">牙买碟</a></li>
+			<li><a href="#hello">吃了吗？</a></li>
+			<li>demo
+				<ul>
+					<li>tom</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="car">
+		<ul>
+			<li>
+				<input type="checkbox" name="item" value="1"/>苹果
+			</li>
+			<li>
+				<input type="checkbox" name="item" value="2"/>小米
+			</li>
+		</ul>
+		<input type="button" value="结帐" onclick="checkout()"/>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

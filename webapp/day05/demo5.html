@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+	
+	
+	function cal(){
+		var input =document.getElementById("num").value;
+		var span =document.getElementById("result");
+		var n = parseInt(num);	
+		//判断值是不是数字
+		if(isNaN(n)){
+			//不是数字，在span里给予提示
+			span.innerHTML="请输入数字";
+		}else{
+			//是数字，计算阶乘
+			if(n<0){
+				span.innerHTML="负数没有阶乘";
+			}else if(n==0){
+				span.innerHTML="1";
+			}else{
+				var s=1;
+				for(var i=n;i;i--){
+					s=s*i;
+				}
+				span.innerHTML= s ;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<p>0的阶乘是1</p>
+	<p>n的阶乘=1*2*3*4*...*n</p>
+	<p>n是正整数</p>
+	<p>
+		<input type="text" id="num"/>
+		<input type="button" value="计算"
+			onclick="cal();"/>
+		=<span id="result"></span>
+	</p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的网页</title>
+<style>
+	#d0,p{
+		width:400px;
+		border:1px solid red;
+		text-align: center;
+	}
+	#d0 div{
+		width:100px;
+		height:100px;
+		margin:10px;
+	}
+	#d1{
+		background-color: #F00;
+	}
+	#d2{
+		background-color: #0F0;
+	}
+	#d3{
+		background-color: #00F;
+	}
+	/*浮动*/
+	#d1,#d2,#d3{
+		float:left;
+	}
+	/*消除浮动影响-1*/
+	/*clear的目标将不受影响，出现在所有浮动元素的下方*/
+	p{
+		/*clear:left;*/
+	}
+	/*消除浮动影响-2*/
+	#d0 #d4{
+		height:0;
+		clear:left;
+	}
+</style>
+</head>
+<body>
+	<div id="d0">
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+		<div id="d4"></div>
+	</div>
+	<p>浮动时观察我的位置</p>
+</body>
+</html>

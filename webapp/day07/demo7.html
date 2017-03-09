@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#slide img{
+		display:none;
+	}
+</style>
+
+
+</head>
+<body>
+
+
+	<h1>图片轮换</h1>
+	<div id="slide">
+		<img src="../images/01.jpg" style="display: block;">
+		<img src="../images/02.jpg">
+		<img src="../images/03.jpg">
+		<img src="../images/04.jpg">
+	</div>
+	
+</body>
+<script type="text/javascript">
+// 写在div元素之后,这样才能获取元素
+	var div =document.getElementById("slide");
+	var ary =div.getElementsByTagName("img");
+	var index=0;
+	setInterval(function(){
+			for(var i=0;i<ary.length;i++){
+				ary[i].style.display="none";
+				//ary[i].removeAttribute('style');
+			}
+			ary[index++%ary.length].style.display="block";
+	}, 500)
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

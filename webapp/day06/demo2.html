@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style >
+	.ok {
+		color:green;
+	}
+	.error{
+		color:red;
+	}
+</style>
+<script>
+
+	function checkCode(){
+		//获取帐号
+		var code =document.getElementById("code").value;
+		//验证帐号格式
+		var reg =/^\w{5,10}$/;
+		var span =document.getElementById("code_msg");
+		console.log(span);
+		if(reg.test(code)){
+			//对了，将提示信息变绿 
+			span.className="ok";
+			return true;
+		}else{
+			span.className="error";
+			return false;
+		};
+	}
+	function checkPwd(){
+		//获取密码
+		var code =document.getElementById("pass").value;
+		//验证密码格式
+		var reg =/^\w{10,20}$/;
+		var span =document.getElementById("ps");
+		if(reg.test(code)){
+			//对了，将提示信息变绿 
+			span.className="ok";
+			return true;
+		}else{
+			span.className="error";
+			return false;
+		};
+	}
+	
+</script>
+</head>
+<body>
+	<!--  
+		1. 写条件表达式时，可以用任何值当条件，任何空值都等价与false
+		2.return语句不是表达式，上面的规则不适用，即想取消事件必须返回false，返回其他任何值都无法代替false
+	 -->
+	<form action="http://www.tmooc.cn" onsubmit="return checkCode()+checkPwd()==2;">
+		<p>
+			帐号：<input type="text" id="code" onblur="checkCode()"/><span id="code_msg">&nbsp;&nbsp;&nbsp;&nbsp;5-10位字母、数字、下划线组成</span>
+		</p>
+		<p>
+			密码：<input type="password" id="pass" onblur="checkPwd()"/><span id="ps">&nbsp;&nbsp;&nbsp;&nbsp;10-20位字母、数字、下划线组成</span>
+		</p>
+		<p>
+			<input type="submit" value="登录"/>
+		</p>
+		
+	</form>
+</body>
+</html>

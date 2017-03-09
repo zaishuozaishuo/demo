@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 在页面加载完成用户点击按钮时调用此函数
+	//此随机数早已生成完毕，可以使用了
+	function guess(){
+		//获取文本框里的值
+		var num=document.getElementById("num").value;
+		var span=document.getElementById("result");
+		if(isNaN(num)){
+			//不是数字，span里给提示
+			span.innerHTML="请输入数字";
+		}else{
+			if(num>ran){
+				span.innerHTML="大了";
+			}else if(num<ran){
+				span.innerHTML="小了";
+			}else{
+				span.innerHTML="答对";
+			}
+		}
+	}
+	// 在页面加载前就生成随机数
+	var ran = parseInt(Math.random()*100);
+	console.log(ran);
+</script>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<input type="button" value="猜" 
+		onclick="guess();"/>
+	=<span id="result"></span>
+</body>
+</html>

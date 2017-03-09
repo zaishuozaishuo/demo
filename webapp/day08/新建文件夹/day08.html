@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day08</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>JavaScript</h1>
+<h2>DOM 元素查询</h2>
+<p>如果需要操作 HTML 元素，必须首先找到该元素</p>
+<p>查询节点的方式</p>
+<ul>
+<li>通过 id 查询</li>
+<li>通过层次（节点关系）查询</li>
+<li>通过标签名称查询</li>
+<li>通过 name 属性查询</li>
+</ul>
+<h3>通过 id 查询</h3>
+<p>语法:</p>
+<pre><code>e = document.getElementById(元素ID)
+</code></pre>
+
+<h3>通过层次（节点关系）查询</h3>
+<ul>
+<li>
+parentNode
+<ul>
+<li>遵循文档的上下层次结构，查找单个父节点</li>
+</ul>
+</li>
+<li>
+childNodes 
+<ul>
+<li>遵循文档的上下层次结构，查找多个子节点</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>提示: 不用使用childen属性, 这个属性是Chrome浏览器专用属性, 其他浏览器不一定支持, 这种现象就是浏览器兼容问题, 是普遍问题. 建议使用通用API实现代码, 避免兼容性问题.</p>
+</blockquote>
+<h3>根据标签名查询节点</h3>
+<ul>
+<li>
+getElementsByTagName()
+<ul>
+<li>根据指定的标签名称返回所有的元素</li>
+<li>忽略文档的结构查找整个 HTML 文档中的所有元素(子孙元素)</li>
+<li>如果标签名称错误，则返回 长度为 0 的节点列表</li>
+</ul>
+</li>
+<li>
+返回一个节点列表（数组）
+<ul>
+<li>使用节点列表的 length 属性获取个数</li>
+<li>[index]：定位具体的元素</li>
+</ul>
+</li>
+</ul>
+<p>案例:</p>
+<pre><code>function test(){
+    //按照ID查询
+    var ul = document.getElementById(&quot;hello&quot;);
+    var div = ul.parentNode;
+    console.log(div);
+    var childen=ul.childNodes;
+    console.log(childen);
+    var elements=ul.getElementsByTagName('li');
+    console.log(elements);
+    //遍历子节点
+    for(var i=0; i&lt;childen.length; i++){
+        var node=childen[i];//文本/元素
+        if(node.nodeType==1){//元素
+            console.log(node);
+        }
+    }
+}
+</code></pre>
+
+<h3>根据 name 属性查询节点</h3>
+<ul>
+<li>
+document.getElementsByName()
+<ul>
+<li>根据标签的 name 属性的值进行查询</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>适合在表单中查询名字相同的 选项框 (单选/复选)</p>
+</blockquote>
+<p>案例:</p>
+<pre><code>function checkout(){
+    var car = document.getElementById('car');
+    var inputs = 
+        car.getElementsByTagName('input');
+    //获取 name 是 item 的全部元素
+    var items = 
+        document.getElementsByName('item');
+    console.log(car);
+    console.log(inputs);
+    console.log(items);
+}
+</code></pre>
+
+<p>完整案例:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;按照层次关系查询&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function test(){
+    //按照ID查询
+    var ul = document.getElementById(&quot;hello&quot;);
+    var div = ul.parentNode;
+    console.log(div);
+    var childen=ul.childNodes;
+    console.log(childen);
+    var elements=ul.getElementsByTagName('li');
+    console.log(elements);
+    //遍历子节点
+    for(var i=0; i&lt;childen.length; i++){
+        var node=childen[i];//文本/元素
+        if(node.nodeType==1){//元素
+            console.log(node);
+        }
+    }
+
+}
+
+function checkout(){
+    var car = document.getElementById('car');
+    var inputs = 
+        car.getElementsByTagName('input');
+    //获取 name 是 item 的全部元素
+    var items = 
+        document.getElementsByName('item');
+    console.log(car);
+    console.log(inputs);
+    console.log(items);
+}
+
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;按照层次关系查询&lt;/h1&gt;
+    &lt;input type=&quot;button&quot; value=&quot;测试&quot;
+        onclick=&quot;test()&quot;&gt; 
+    &lt;div&gt;
+        &lt;ul id=&quot;hello&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#hello&quot;&gt;您好&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#hello&quot;&gt;Hello&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#hello&quot;&gt;牙买碟&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#hello&quot;&gt;吃了吗&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;Demo
+                &lt;ul&gt;
+                    &lt;li&gt;Tom&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;car&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;input type=&quot;checkbox&quot; 
+                    name=&quot;item&quot; value=&quot;1&quot;&gt;苹果
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;input type=&quot;checkbox&quot; 
+                    name=&quot;item&quot; value=&quot;2&quot;&gt;小米
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;input type=&quot;button&quot; value=&quot;结账&quot; 
+            onclick=&quot;checkout()&quot;&gt; 
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>添加节点</h2>
+<p>DOM API 提供了添加元素的方法;</p>
+<p>添加元素步骤:</p>
+<ol>
+<li>
+创建元素
+<ul>
+<li>新元素=document.createElement(元素名)</li>
+</ul>
+</li>
+<li>
+追加元素
+<ul>
+<li>父元素.appendChild(新元素)</li>
+</ul>
+</li>
+</ol>
+<p>案例:</p>
+<pre><code>//追加新元素
+var li = document.createElement('li');
+li.innerHTML='Andy';
+var ul = document.getElementById('demo');
+ul.appendChild(li);
+</code></pre>
+
+<p>插入元素步骤:</p>
+<ol>
+<li>
+创建新元素
+<ul>
+<li>新元素=document.createElement(元素名)</li>
+</ul>
+</li>
+<li>
+插入元素
+<ul>
+<li>父元素.insertBefore(新元素, 参考位置元素)</li>
+<li>在 <strong>参考位置元素</strong> 之前插入新元素</li>
+</ul>
+</li>
+</ol>
+<p>案例:</p>
+<pre><code>//插入新元素
+li = document.createElement('li');
+li.innerHTML='Mac';
+var tom=ul.getElementsByTagName('li')[0];
+ul.insertBefore(li, tom);
+</code></pre>
+
+<h3>删除元素</h3>
+<p>删除元素步骤:</p>
+<ol>
+<li>找到父元素</li>
+<li>找到子元素</li>
+<li>
+从父元素中删除子元素
+<ul>
+<li>父元素.removeChild(子元素)</li>
+</ul>
+</li>
+</ol>
+<p>案例:</p>
+<pre><code>var ul = $('demo');
+var li = ul.getElementsByTagName('li')[0];
+//删除元素
+ul.removeChild(li);
+</code></pre>
+
+<p>完整案例:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function test(){
+    //追加新元素
+    var li = document.createElement('li');
+    li.innerHTML='Andy';
+    var ul = document.getElementById('demo');
+    ul.appendChild(li);
+    //插入新元素
+    li = document.createElement('li');
+    li.innerHTML='Mac';
+    var tom=ul.getElementsByTagName('li')[0];
+    ul.insertBefore(li, tom);
+}
+
+function removeLi(){
+    var ul = $('demo');
+    var li = ul.getElementsByTagName('li')[0];
+    //删除元素
+    ul.removeChild(li);
+    var list=$('list');
+    list.appendChild(li);
+}
+function $(id) {
+    return document.getElementById(id);
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;添加元素&lt;/h1&gt;
+    &lt;!-- ul.insertBefor(new, tom) --&gt;
+    &lt;input type=&quot;button&quot; value=&quot;测试&quot;
+        onclick=&quot;test()&quot;&gt;   
+    &lt;ul id=&quot;demo&quot;&gt;
+        &lt;li&gt;Tom&lt;/li&gt;
+        &lt;li&gt;Jerry&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;删除列表&lt;/p&gt;
+    &lt;input type=&quot;button&quot; value=&quot;删除&quot;
+      onclick=&quot;removeLi()&quot;&gt;
+    &lt;ul id=&quot;list&quot;&gt;
+
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>经典案例 级联菜单</h3>
+<p>分析:</p>
+<pre><code>![](1.png)
+</code></pre>
+
+<p>代码:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var cities=[
+         ['请选择'],
+         ['静安','浦东','宝山'],
+         ['沈阳','高坎','鞍山'], 
+         ['石家庄','保定','唐山','廊坊']];
+function changeCities(list){
+    //list = document.getElementById('province');
+    //得到那个项目被选定了?
+    var index = list.selectedIndex;
+    console.log(index);
+    //找到城市
+    var city = cities[index];
+    console.log(city);
+    var s=document.getElementById(&quot;city&quot;);
+    //清空城市列表
+    s.innerHTML=&quot;&quot;; 
+    //创建城市列表
+    for(var i=0; i&lt;city.length; i++){
+        //创建option 
+        var opt=document.createElement('option');
+        //value是发送到服务器的数据,
+        // 不是给客户端使用的
+        opt.value=i;
+        //opt.setAttribute('value', i)
+        opt.innerHTML=city[i];
+        //添加到城市列表中
+        s.appendChild(opt);
+    }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;联动菜单&lt;/h1&gt;
+    省份:
+    &lt;select id=&quot;province&quot; 
+        onchange=&quot;changeCities(this);&quot;&gt;
+        &lt;option value=&quot;0&quot;&gt;请选择&lt;/option&gt;
+        &lt;option value='1'&gt;上海&lt;/option&gt;
+        &lt;option value='2'&gt;辽宁&lt;/option&gt;
+        &lt;option value='3'&gt;河北&lt;/option&gt;
+    &lt;/select&gt;
+    城市:
+    &lt;select id=&quot;city&quot;&gt;
+        &lt;option value='0'&gt;请选择&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<blockquote>
+<p>提示: 必须逐步测试!!!</p>
+</blockquote>
+<h3>经典案例: 购物车</h3>
+<p>添加商品:</p>
+<p><img src="2.png" /></p>
+<p>案例:</p>
+<pre><code>function add_shoppingcart(btn){
+    //console.log(btn);
+    var tr = btn.parentNode.parentNode;
+    //console.log(tr);
+    //找到全部td
+    var tds = tr.getElementsByTagName('td');
+    //console.log(tds);
+    //获取商品名
+    var name=tds[0].innerHTML;
+    var price=parseFloat(tds[1].innerHTML);
+    //console.log(name);
+    //console.log(price);
+    //将商品信息添加到购物车表格
+    var tr = document.createElement('tr');
+    tr.innerHTML='&lt;td&gt;'+name+'&lt;/td&gt;'+
+        '&lt;td&gt;'+price+'&lt;/td&gt;'+
+        '&lt;td align=&quot;center&quot;&gt;'+
+        '&lt;input type=&quot;button&quot; value=&quot;-&quot; onclick=&quot;changeNum(this, -1);&quot;&gt;'+
+        '&lt;input type=&quot;text&quot; size=&quot;3&quot; readonly value=&quot;1&quot;/&gt;'+
+        '&lt;input type=&quot;button&quot; value=&quot;+&quot; onclick=&quot;changeNum(this, 1);&quot;&gt;'+
+    '&lt;/td&gt;'+
+        '&lt;td&gt;&lt;/td&gt;'+
+        '&lt;td align=&quot;center&quot;&gt;&lt;input type=&quot;button&quot; value=&quot;X&quot; onclick=&quot;removeItem(this);&quot;&gt;&lt;/td&gt;';
+    //console.log(tr);
+    //将tr插入到购物车
+    var tbody=document.getElementById('goods');
+    tbody.appendChild(tr);
+    total();
+}
+</code></pre>
+
+<p>计算总价:</p>
+<p><img src="3.png" /></p>
+<p>案例:</p>
+<pre><code>//计算商品总价
+function total(){
+    //console.log('total()');
+    var tbody=$('goods');
+    var trs = 
+        tbody.getElementsByTagName('tr');
+    console.log(trs);
+    var sum = 0;
+    for(var i=0; i&lt;trs.length; i++){
+        var tr = trs[i];
+        console.log(tr);
+        var tds=tr.getElementsByTagName('td');
+        console.log(tds);
+        //获取商品的价格
+        var price=parseFloat(
+                tds[1].innerHTML);
+        console.log(price);
+        //获取数量值 
+        var num = parseInt(tds[2]
+            .getElementsByTagName('input')[1]
+            .value);
+        console.log(num);
+        //计算金额
+        var money = num*price;
+        tds[3].innerHTML=money.toFixed(2);
+        //累计总价
+        sum += money;
+    }
+    //将总价写到 tfoot中
+    $('total').innerHTML=sum.toFixed(2);
+}
+</code></pre>
+
+<p>增加/减少数量:</p>
+<pre><code>function changeNum(btn, n){
+    //console.log(n);
+    //找到当前的num
+    var input=btn.parentNode
+        .getElementsByTagName('input')[1];
+    console.log(input);
+    var num = parseInt(input.value);
+    console.log(num); 
+    //增加/减少
+    num += n;
+    //检查是否&lt;=0
+    if(num&lt;=0){
+        return;
+    }
+    //更新 input.value
+    input.value = num;
+    total();
+}
+</code></pre>
+
+<p>删除商品:</p>
+<pre><code>function removeItem(btn){
+    var tr=btn.parentNode.parentNode;
+    var tbody = $('goods');
+    tbody.removeChild(tr);
+    total();
+}
+</code></pre>
+
+<p>完整案例:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;购物车&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      h1 {
+        text-align:center;
+      }
+      table {
+        margin:0 auto;
+        width:60%;
+        border:2px solid #aaa;
+        border-collapse:collapse;
+      }
+      table th, table td {
+        border:2px solid #aaa;
+        padding:5px;
+      }
+      th {
+        background-color:#eee;
+      }
+    &lt;/style&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function add_shoppingcart(btn){
+            //console.log(btn);
+            var tr = btn.parentNode.parentNode;
+            //console.log(tr);
+            //找到全部td
+            var tds = tr.getElementsByTagName('td');
+            //console.log(tds);
+            //获取商品名
+            var name=tds[0].innerHTML;
+            var price=parseFloat(tds[1].innerHTML);
+            //console.log(name);
+            //console.log(price);
+            //将商品信息添加到购物车表格
+            var tr = document.createElement('tr');
+            tr.innerHTML='&lt;td&gt;'+name+'&lt;/td&gt;'+
+                '&lt;td&gt;'+price+'&lt;/td&gt;'+
+                '&lt;td align=&quot;center&quot;&gt;'+
+                '&lt;input type=&quot;button&quot; value=&quot;-&quot; onclick=&quot;changeNum(this, -1);&quot;&gt;'+
+                '&lt;input type=&quot;text&quot; size=&quot;3&quot; readonly value=&quot;1&quot;/&gt;'+
+                '&lt;input type=&quot;button&quot; value=&quot;+&quot; onclick=&quot;changeNum(this, 1);&quot;&gt;'+
+            '&lt;/td&gt;'+
+                '&lt;td&gt;&lt;/td&gt;'+
+                '&lt;td align=&quot;center&quot;&gt;&lt;input type=&quot;button&quot; value=&quot;X&quot; onclick=&quot;removeItem(this);&quot;&gt;&lt;/td&gt;';
+            //console.log(tr);
+            //将tr插入到购物车
+            var tbody=document.getElementById('goods');
+            tbody.appendChild(tr);
+            total();
+        }
+        //计算商品总价
+        function total(){
+            //console.log('total()');
+            var tbody=$('goods');
+            var trs = 
+                tbody.getElementsByTagName('tr');
+            console.log(trs);
+            var sum = 0;
+            for(var i=0; i&lt;trs.length; i++){
+                var tr = trs[i];
+                console.log(tr);
+                var tds=tr.getElementsByTagName('td');
+                console.log(tds);
+                //获取商品的价格
+                var price=parseFloat(
+                        tds[1].innerHTML);
+                console.log(price);
+                //获取数量值 
+                var num = parseInt(tds[2]
+                    .getElementsByTagName('input')[1]
+                    .value);
+                console.log(num);
+                //计算金额
+                var money = num*price;
+                tds[3].innerHTML=money.toFixed(2);
+                //累计总价
+                sum += money;
+            }
+            //将总价写到 tfoot中
+            $('total').innerHTML=sum.toFixed(2);
+        }
+
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        function changeNum(btn, n){
+            //console.log(n);
+            //找到当前的num
+            var input=btn.parentNode
+                .getElementsByTagName('input')[1];
+            console.log(input);
+            var num = parseInt(input.value);
+            console.log(num); 
+            //增加/减少
+            num += n;
+            //检查是否&lt;=0
+            if(num&lt;=0){
+                return;
+            }
+            //更新 input.value
+            input.value = num;
+            total();
+        }
+
+        function removeItem(btn){
+            var tr=btn.parentNode.parentNode;
+            var tbody = $('goods');
+            tbody.removeChild(tr);
+            total();
+        }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;真划算&lt;/h1&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;th&gt;商品&lt;/th&gt;
+        &lt;th&gt;单价(元)&lt;/th&gt;
+        &lt;th&gt;颜色&lt;/th&gt;
+        &lt;th&gt;库存&lt;/th&gt;
+        &lt;th&gt;好评率&lt;/th&gt;
+        &lt;th&gt;操作&lt;/th&gt;
+      &lt;/tr&gt;   
+      &lt;tr&gt;
+        &lt;td&gt;罗技M185鼠标&lt;/td&gt;
+        &lt;td&gt;80&lt;/td&gt;
+        &lt;td&gt;黑色&lt;/td&gt;
+        &lt;td&gt;893&lt;/td&gt;
+        &lt;td&gt;98%&lt;/td&gt;
+        &lt;td align=&quot;center&quot;&gt;
+          &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+            onclick=&quot;add_shoppingcart(this);&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;微软X470键盘&lt;/td&gt;
+        &lt;td&gt;150&lt;/td&gt;
+        &lt;td&gt;黑色&lt;/td&gt;
+        &lt;td&gt;9028&lt;/td&gt;
+        &lt;td&gt;96%&lt;/td&gt;
+        &lt;td align=&quot;center&quot;&gt;
+          &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; onclick=&quot;add_shoppingcart(this);&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;洛克iphone6手机壳&lt;/td&gt;
+        &lt;td&gt;60&lt;/td&gt;
+        &lt;td&gt;透明&lt;/td&gt;
+        &lt;td&gt;672&lt;/td&gt;
+        &lt;td&gt;99%&lt;/td&gt;
+        &lt;td align=&quot;center&quot;&gt;
+          &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; onclick=&quot;add_shoppingcart(this);&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;蓝牙耳机&lt;/td&gt;
+        &lt;td&gt;100&lt;/td&gt;
+        &lt;td&gt;蓝色&lt;/td&gt;
+        &lt;td&gt;8937&lt;/td&gt;
+        &lt;td&gt;95%&lt;/td&gt;
+        &lt;td align=&quot;center&quot;&gt;
+          &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; onclick=&quot;add_shoppingcart(this);&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;金士顿U盘&lt;/td&gt;
+        &lt;td&gt;70&lt;/td&gt;
+        &lt;td&gt;红色&lt;/td&gt;
+        &lt;td&gt;482&lt;/td&gt;
+        &lt;td&gt;100%&lt;/td&gt;
+        &lt;td align=&quot;center&quot;&gt;
+          &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; onclick=&quot;add_shoppingcart(this);&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;h1&gt;购物车&lt;/h1&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;商品&lt;/th&gt;
+          &lt;th&gt;单价(元)&lt;/th&gt;
+          &lt;th&gt;数量&lt;/th&gt;
+          &lt;th&gt;金额(元)&lt;/th&gt;
+          &lt;th&gt;删除&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody id=&quot;goods&quot;&gt;
+      &lt;!-- 
+        &lt;tr&gt;
+          &lt;td&gt;罗技M185鼠标&lt;/td&gt;
+          &lt;td&gt;80&lt;/td&gt;
+          &lt;td align=&quot;center&quot;&gt;
+            &lt;input type=&quot;button&quot; value=&quot;-&quot;/&gt;
+            &lt;input type=&quot;text&quot; size=&quot;3&quot; readonly value=&quot;1&quot;/&gt;
+            &lt;input type=&quot;button&quot; value=&quot;+&quot;/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;80&lt;/td&gt;
+          &lt;td align=&quot;center&quot;&gt;&lt;input type=&quot;button&quot; value=&quot;x&quot;/&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        --&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td colspan=&quot;3&quot; align=&quot;right&quot;&gt;总计&lt;/td&gt;
+          &lt;td id=&quot;total&quot;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;    
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<hr />
+<h2>作业</h2>
+<ol>
+<li>完成购物车案例</li>
+<li>完成级联菜单案例</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

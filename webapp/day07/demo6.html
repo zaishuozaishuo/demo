@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.alert{
+		color:red; 
+		border:1px solid #ddd;
+	}
+</style>
+<script type="text/javascript">
+	function styleIt1(){
+		var div =document.getElementById("div1");
+		div.className="alert";
+	}
+	function styleIt2(){
+		var div =document.getElementById("div2");
+		div.style.color="red";
+		div.style.border="1px solid red";
+		div.style.borderRadius="4px";
+	}
+</script>
+</head>
+<body>
+	<h1>样式效果演示</h1>
+	<input type="button" value="静静" onclick="styleIt1()">
+	<input type="button" value="默默" onclick="styleIt2()">
+	<div id="div1">我想静静</div>
+	<div id="div2">我想默默</div>
+</body>
+</html>

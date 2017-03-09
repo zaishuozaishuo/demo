@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function testNode(){
+		var e =document.getElementById("msg");
+		var txt =e.childNodes[0];
+		console.log("document:"+document.nodeType+","+document.nodeName);
+		console.log("document:"+e.nodeType+","+e.nodeName);
+		console.log("document:"+txt.nodeType+","+txt.nodeName);
+	}
+	function insertHTML(){
+		var div =document.getElementById("demo");
+		var list ='<ul>'+'<li>tom</li>'+'<li>jerry</li>'+'</ul>';
+		div.innerHTML=list;
+	}
+	function insertText(){
+		var div =document.getElementById("demo");
+		div.innerText="<b>您好</b>";
+	}
+	function changeAttribute(){
+		var a =document.getElementById('doc');
+		var title =a.getAttribute('title');
+		console.log(title);
+		a.setAttribute('title', 'Tmooc');
+		a.setAttribute('age', '88');
+		a.setAttribute('href', 'http://Tmooc.cn');
+	}
+</script>
+</head>
+<body>
+	<h1 id="mss">Dom</h1>
+	<p id="msg">hello</p>
+	<div id="demo"></div>
+	<input type="button" value="ss" onclick="testNode();"/>
+	<input type="button" value="HHH" onclick="insertHTML();"/>
+	<input type="button" value="HH" onclick="insertText();"/>
+	<p>
+		<input type="button" value="title" onclick="changeAttribute()"/>
+		<a id="doc" href="http://doc.tedu.cn" title="文档资源">文档</a>
+	</p>
+</body>
+</html>

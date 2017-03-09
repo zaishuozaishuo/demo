@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+	//1.Number
+	var num =12.56789;
+	console.log(num.toFixed(3));
+	//2.Array
+	//2.1如何创建数组
+	//js中的数组都是object数组
+	var a1=["张三",25,true];
+	console.log(a1[0]);
+	var a2 =new Array();
+	a2.push("李四");
+	a2.push(23);
+	a2.push(false);
+	console.log(a2[0]);
+	//2.2二维数组:数组中的元素仍是数组
+	//数组中的元素也是数组,这样的数组就是二维数组
+	var a3=[[1,2,3],["张三",25,false],["李四",26,true],[[1,2],[2,3]]]
+	console.log(a3[1][0]);
+	console.log(a3[3]);
+	//2.3数组倒转
+	var a4=[8,58,5,74,7,6];
+	a4.reverse();
+	console.log(a4);
+	//2.4数组排序(*)
+	//默认按照字符串进行比较排序
+	function cpr(a,b) {
+		return a-b;
+	}
+	//2.4.1sort()括号内直接传的匿名函数等价于cpr函数
+	a4.sort(function(a,b){return a-b});//匿名函数
+	console.log(a4);
+	//Math
+	console.log(Math.PI);
+	console.log(Math.round(7.8));
+	
+	//4.Date
+	//4.1如何创建日期
+	//1)创建客户机的当前时间
+	var d1= new Date();
+	console.log(d1);
+	//2）创建固定的时间（一般由服务器提供）
+	var d2 =new Date("2016/11/11 11:11:11");
+	console.log(d2);
+	//4.2日期对象的方法
+	console.log(d2.toLocaleDateString());
+	console.log(d2.toLocaleTimeString());
+	console.log(d2.getFullYear());
+	console.log(d2.getMonth()+1);//月从0开始
+	console.log(d2.getDate());
+	//5.RegExp
+	//5.1如何创建正则表达式对象
+	var str ="you can you up, no can no bb.";
+	var reg=/no/;
+	//5.2正则对象提供的方法
+	//1)reg.test(str)
+	//检测str中是否存在和reg匹配的子串
+	console.log(reg.test(str));
+	//2)reg.exec(str)
+	//非全局模式下，是从str中找出和reg匹配的第一个子串
+	console.log(reg.exec(str));
+	//全局模式下，每次调用该方法，就是从str中找出与reg匹配的第N个子串
+	reg=/no/g;
+	console.log(reg.exec(str));
+	console.log(reg.exec(str));
+	console.log(reg.exec(str));
+	console.log(reg.exec(str));
+	//5.3字符串支持正则的方法
+	//1)str.replace(reg,"");*
+	//将str中与reg匹配的子串替换成目标
+	console.log(str.replace(reg,"bu"));
+	//字符串是不可变的，一切修改字符串的方法，返回的都是新字符串，并没有改变原字符串
+	console.log(str);
+	//2)str.match(reg)
+	//从str中找出和reg匹配的所有子串
+	console.log(str.match(reg));
+	//3)str.search(reg)
+	//从str中找出和reg匹配的第一个子串的位置
+	console.log(str.search(reg));
+	//6.Function
+	//浏览器加载网页到此处时，仅仅是根据声明创建了函数对象，而并没有调用此函数
+	function sum(){
+		var s=0;
+		if(arguments != null && arguments.length>0){
+			for(var i=0;i<arguments.length;i++){
+				s +=arguments[i];
+			}
+		}
+		return s;
+	}
+	//页面加载时立刻调用函数
+	console.log(sum(5,8));
+	console.log(sum(7,8,9))
+</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

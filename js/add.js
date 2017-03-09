@@ -5,21 +5,8 @@
  * @version $Id$
  */
 var addwe = function(event){
-	console.log('ok');
-	// var str =event.target.parentNode.parentNode;
-	// console.log(str);
-	ReactDOM.render(
-	  <Hello/>,
-	  document.getElementById('addadd')
-);
-
+	var tr = event.parentNode.parentNode;
+	console.log(tr);
+	var tds = tr.getElementByTagName('td');
+	
 }
- 
-
- var Hello = React.createClass(
- 		{
- 			render: function(){
- 				return <h1> hello</h1>;
- 			}
- 		}
- 	);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var id=[];
+	function startTimer(){
+		if(id.length==0){
+		id[id.length]=setInterval(showTime, 1000);
+		}
+	}
+	function showTime(){
+		var now =new Date();
+		var str =now.toLocaleTimeString()
+		var div=document.getElementById("timer")
+		div.innerHTML=str;
+	}
+	function stopTimer(){
+		if(id.length!=0){
+			clearInterval(id[0]);
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>定时器 定时执行</h1>
+	<input type="button" value="定时器" onclick="startTimer();" />
+	<input type="button" value="结束定时器" onclick="stopTimer();" />
+	<p id="timer"></p>
+</body>
+</html>

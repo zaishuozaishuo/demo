@@ -1,0 +1,195 @@
+/* 0.前期设置*/
+* {
+	padding:0;
+	margin:0;
+}
+/*1.页面分区并设置每个区域的尺寸*/
+div{
+	border:1px solid #F00;
+	margin:0 auto;
+}
+.logo{
+	width:960px;
+	height:61px;
+}
+.menu{
+	height:91px;
+}
+.core{
+	height:410px;
+	padding-top: 10px;
+}
+.copy{
+	height:50px;
+	width:960px;
+}
+.content{
+	width:950px;
+	height:390px;
+	border:5px solid #8ac1db;
+}
+.content div{
+	width:910px;
+	height:40px;
+}
+.content .date{
+	height:310px;
+}
+/*2.给页面上色:设置背景色和背景图*/
+body{
+	background-color: #0EA8D8;
+}
+.logo{
+	background:url(../img/top_bg.png);
+}
+.menu{
+	background-color: #0488BB;
+}
+.core{
+	background:url(../img/content_bg.png) repeat-x top;
+}
+.content{
+	background-color:#e8f3f8;
+}
+/*3. 设置文本样式*/
+body{
+	font-family:"微软雅黑","文泉驿正黑","黑体";
+	font-size:14px;
+}
+.logo{
+	text-align:right;
+	line-height:61px;
+}
+.logo a{
+	margin-right:40px;
+	color:#FFF;
+	text-decoration:none;
+}
+.logo a:hover{
+	font-weight: bold;
+}
+.copy p{
+	text-align:center;
+	color:#FFF;
+	line-height: 25px;
+}
+/*4.设置表格样式*/
+.date table{
+	width:100%;
+	border:1px solid #ccc;
+	/*边框合并：表格独有的声明，必须写在table上*/
+	border-collapse:collapse;
+}
+.date td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+.date thead tr{
+	background-color:#fbedce;
+	height:40px;
+	font-weight:bold;
+}
+.date tbody tr{
+	background-color: #FFF;
+	height:32px;
+}
+.date tbody tr:hover{
+	background-color: #f7f9fd;
+}
+/*设置按钮样式*/
+.update{
+	padding-left:15px;
+	background:url(../img/modification.png) no-repeat left;
+	border:0; 	
+}
+.delete{
+	padding-left:13px;
+	background:url(../img/delete.png) no-repeat left;
+	border:0; 
+}
+.date input:hover{
+	/*鼠标变手型*/
+	cursor:pointer;
+}
+/*5.定位logo和消息提示框*/
+.logo img{
+	float:left;
+}
+/*在父元素上加position便于此元素参照定位*/
+.content{
+	position:relative;
+}
+.content .msg{
+	position:absolute;
+	left:250px;
+	top:110px;
+	width:500px;
+	height:80px;
+}
+.msg img{
+	float:right;
+	margin:5px 5px 0px 0px;
+}
+.msg img:hover{
+	cursor:pointer;
+}
+.msg p{
+	margin-left:38px;
+	line-height: 80px;
+}
+.content .msg {
+	border:1px solid #F68A8A;
+	background: #FDECEC url(../img/ok.png) no-repeat 10px 32px;
+}
+/*6.处理菜单区图片摆放和切换*/
+.menu ul{
+	width:960px;
+	height:91px;
+	margin:0 auto;
+	border:1px solid yellow;
+	list-style-type: none;
+}
+.menu li{
+	width:68px;
+	height:77px;
+	margin:7px 14px;
+	border:1px solid red;
+	float:left;
+} 
+.menu li:hover{
+	cursor:pointer;
+}
+.index{
+	background-image: url(../img/index_out.png);
+}
+.index:hover{
+	background-image: url(../img/index_on.png);
+}
+.role{
+	background-image: url(../img/role_out.png);
+}
+.role:hover{
+	background-image: url(../img/role_on.png);
+}
+/*去掉开发过程中用于调试的边框*/
+.menu ul, .menu li , div {
+	border:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

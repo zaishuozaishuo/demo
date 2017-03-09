@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的网页</title>
+</head>
+<body>
+	<!-- 1.表单元素：用来划分一个范围，在此范围内的控件中的数据才能够提交给服务器 
+		action:用来申明表单数据提交的目标
+		method/enctype -->
+	<form action="http://www.tmooc.cn">
+		<!-- 2.表单控件：用来给用户输入数据的 -->
+		<!-- 2.1 input元素(9) -->
+		<!-- 1)文本框 
+			value:设置默认值
+			maxlength:限制输入长度
+			readonly:设置只读-->
+		<p>
+			帐号：<input type="text" value="admin" maxlength="10" readonly/>
+		</p>
+		<!-- 2)密码框:属性同上 -->
+		<p>
+			密码：<input type="password"/>
+		</p>
+		<!-- 3)单选框 
+			name:组名，同一组radio彼此互斥
+			checked:设置默认选中
+			value: -->
+		<p>
+			性别：
+			<input type="radio" name="sex" checked/>男
+			<input type="radio" name="sex"/>女
+		</p>
+		<!-- 4)多选框 
+			checked:默认选中
+			name/value-->
+		<p>
+				兴趣：
+				<input type="checkbox"/>音乐
+				<input type="checkbox"/>运动
+				<input type="checkbox"/>摄影
+				<input type="checkbox" checked/>棋牌
+		</p>
+		<!-- 5)文件框 -->
+		<p>
+				头像：<input type="file"/>
+		</p>
+		<!-- 6)隐藏框 
+			用来向服务器传递没必要被用户看到的数据,
+			通过value给他设置一个默认值-->
+		<p>
+				<input type="hidden" value="123">
+		</p>
+		<!-- 7)按钮 
+			submit:用来提交表单
+			reset:用来重置表单内的数据
+			button：没有功能,需要用js为它定制功能
+			通过value属性为按钮命名-->
+		<p>
+			<input type="submit" value="注册"/>
+			<input type="reset"  value="重置"/>
+			<input type="button" value="测试">
+		</p>
+		<!-- 2.2其他元素(3) -->
+		<!-- 1)label
+			用来管理表单中的文本，可以将文本与某个控件绑定在一起，使得
+			点击此文本就相当于点击这个控件，从而增加了控件的可点击面积，
+			提高了易用性 
+			绑定的步骤：
+				a.在控件上加id
+				b.在文本外写label，并加for="id"
+			注：id是一个元素的唯一标识，相当于这个元素的身份证号，任何元素都可以有id属性-->
+		<p>
+			<input type="checkbox" id="c1"/>
+			<label for=c1>我已阅读并自愿遵守此协议!</label>
+		</p>
+		<!-- 2)下拉选
+			选项少时单选，选项多时用下拉选 
+			selected:设置默认选中
+			value：将来再讲-->
+		<p>
+			家乡：
+			<select>
+				<option>请选择</option>
+				<option selected>浙江</option>
+				<option>上海</option>
+				<option>福建</option>
+				<option>安徽</option>
+				<option>陕西</option>
+				<option>广东</option>
+			</select>
+		</p>
+		<!-- 3)文本域
+			是一个可以输入多行文字的大框 
+			rows:设置高度
+			cols：设置宽度
+			readonly：设置只读
+			双标签中间的内容就是它的默认值	-->
+		<p>
+			简介：
+			<textarea rows="5" cols="20">请输入内容</textarea>
+		</p>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

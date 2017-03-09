@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//绑定网页加载以后执行事件
+window.onload=init;//注意，init是方法的引用变量
+	function init(){
+		var btn =document.getElementById('btn');
+		//为按钮绑定鼠标单击事件
+		btn.onclick=function(){
+			//this引用调用方法的当前对象
+			//this.value访问当前按钮的value属性
+			console.log("hello")
+		}
+		var doc =document.getElementById("doc");
+		doc.onclick=function(){console.log('doc');return false;}
+	}
+</script>
+</head>
+<body>
+	<h1>事件</h1>
+	<input type="button" id="btn" value="test" />
+	<a id="doc" href="http://doc.tedu.cn">DOC</a>
+</body>
+
+</html>

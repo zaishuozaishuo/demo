@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		border:1px solid #F00;
+		width:1500px;
+		/*此处增加position的目的是为了便于子元素以此目标进行绝对定位，并不是要给此元素设置偏移,所以不许要写偏移量
+			,另外position的值不限制*/
+		position:relative;
+		height:844px;
+	}
+	p{
+		/*绝对定位：释放原来的位置*/
+		position:absolute;
+		left:0;
+		bottom:40px;
+		width:1500px;
+		background-color:#FFF;
+		text-align:center;
+		font-family: "文泉驿正黑","黑体"
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img alt="" src="../day01/x/5555.jpg">
+		<p>苍老师到此一游</p>
+	</div>
+</body>
+</html>

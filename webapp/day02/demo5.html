@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的网页5</title>
+<style>
+	/*1.单个边设置边框
+		left/right/top/bottom*/
+	h1{
+		border-left:10px solid blue;
+	}
+	/*2.四个边一起设置边框*/
+	p{
+		border:1px dashed red;
+	}
+	/*3.内容溢出时的处理：默认不会溢出，因为p的高度会自适应，即内容越多它就越高，只有给它设置了固定的高度时它可能会溢出*/
+	p{
+		width:400px;
+		height:50px;
+		overflow:auto;
+	}
+</style>
+</head>
+<body>
+	<h1>刘苍松</h1>
+	<p>
+		刘苍松，系达内java教学总监，是达内java教学改革的先驱
+		同时也是一名摄影爱好者，他拍的片都很么么哒。他最擅长捕捉肉体和灵魂的契合点，可以折射出对人性的思考与鞭挞
+	</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(e){
+		console.log('test()');
+		//阻止事件的传播
+		if(e.stoppropagation){
+			e.stoppropagation();
+		}else{
+			e.cancelBubble=true;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>事件冒泡</h1>
+	<div onclick="console.log('div')">
+		div元素
+		<p onclick="console.log('p')">p元素
+			<input type="button" value="冒泡" onclick="console.log('btn')"/>
+		</p>
+	</div>
+	<div onclick="console.log('div')">
+		div元素
+		<p onclick="test(event)">p元素
+			<input type="button" value="冒泡" onclick="console.log('btn')"/>
+		</p>
+	</div>
+</body>
+</html>

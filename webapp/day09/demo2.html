@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func(e){
+		console.log(e.clientX+','+e.clientY);
+		var obj =event.target||event.srcElement;
+		console.log(obj);
+	}
+window.onload=function(){
+	var div =document.getElementById("demo");
+	div.onclick=function(event){
+		console.log(event.clientX+','+event.clientY);
+		var obj =event.target||event.srcElement;
+		console.log(obj);
+	}
+	
+}
+</script>
+</head>
+<body>
+	<h1>event 对象</h1>
+	<div onclick="func(event);">hello!</div>
+	<div id="demo">demo div!</div>
+	
+</body>
+</html>

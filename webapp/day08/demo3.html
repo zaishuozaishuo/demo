@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var cities=[['请选择'],
+            ['静安','浦东','宝山'],
+            ['沈阳','高坎','鞍山'],
+            ['石家庄','保定','唐山','廊坊']];
+function changeCities(list){
+	//得到哪个项目被选定了
+	var index =list.selectedIndex;
+	console.log(index);
+	//找到城市
+	var city = cities[index];
+	var s =document.getElementById("city");
+	s.innerHTML="";
+	for(var i=0;i<city.length;i++){
+		//创建option
+		var opt =document.createElement('option');
+		opt.value=i;
+		//opt.setAttribute('value',i)
+		opt.innerHTML=city[i];
+		s.appendChild(opt);
+	}
+	
+}
+
+
+</script>
+</head>
+<body>
+	<h1>联动菜单</h1>
+	省份：
+	<select id="province" onchange="changeCities(this);">
+		<option value='0'>请选择</option>
+		<option value='1'>上海</option>
+		<option value='2'>辽宁</option>
+		<option value='3'>河北</option>
+	</select>
+	城市：
+	<select id="city">
+		<option value='0'>请选择</option>
+	</select>
+</body>
+</html>
