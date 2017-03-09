@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>demo</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/one.css" rel="stylesheet">
+<script  src="ibrary/react.js"></script>
+<script  src="ibrary/react-dom.js"></script>
+<script  src="ibrary/browser.min.js"></script>
+<script type="text/javascript" src="js/add.js" ></script>
+</head>
+<body>
+    <div id="div1">
+        <table class="one">
+        	<thead>
+        		<tr>
+                    <th>类别</th>
+                    <th>商品名</th>
+                    <th>价格</th>
+                    <th>数量</th> 
+                    <th></th>     
+                </tr>
+        	</thead>
+        	<tbody >
+        		<tr>
+        			<td>数码产品</td>
+        			<td>鼠标</td>
+        			<td>1</td>
+        			<td>个</td>
+        			<td>
+                        <input type="button" value="添加" onclick="addwe(event)">         
+                    </td>
+        		</tr>
+        		<tr>
+        			<td>水果</td>
+        			<td>香蕉</td>
+        			<td>1</td>
+        			<td>千克</td>
+        			<td>
+                        <input type="button" value="添加" onclick="">            
+                    </td>
+        		</tr>
+        		<tr>
+        			<td>服装</td>
+        			<td>衣服</td>
+        			<td>1</td>
+        			<td>件</td>
+        			<td>
+                        <input type="button" value="添加" onclick="">            
+                    </td>
+        		</tr>
+        	</tbody>
+        </table>
+    </div>
+    <div id="div2">
+        <table class="two">
+            <thead>
+                <tr>
+                    <th>类别</th>
+                    <th>商品名</th>
+                    <th>价格</th>
+                    <th>数量</th> 
+                    <th></th>     
+                </tr>
+            </thead>
+            <tbody id="addadd" >
+                <tr>
+                    <td>数码产品</td>
+                    <td>鼠标</td>
+                    <td>1</td>
+                    <td>个</td>
+                    <td>
+                        <input type="button" value="删除" onclick="">         
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
